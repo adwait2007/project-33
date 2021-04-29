@@ -99,12 +99,6 @@ function draw(){
   text("GameOver", 150, 300);
   
 }
-if ( gameState =="end") {
-    
-  textSize(90);
-  text("GameOver", 150, 300);
-  
-}
 
   for(var k=0;k < divisions.length;k++){
      divisions[k].display();
