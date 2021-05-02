@@ -58,10 +58,7 @@ function draw(){
   background("black");
   Engine.update(engine);
 
-  textSize(30)
-  fill("white");
-  stroke("black")
-  text("score:"+score,30,30)
+
 
   textSize(20);
   fill("white");
@@ -93,12 +90,7 @@ function draw(){
  stroke("black");
  text("200",425,600);
 
- if ( gameState =="end") {
-    
-  textSize(90);
-  text("GameOver", 150, 300);
-  
-}
+
 
   for(var k=0;k < divisions.length;k++){
      divisions[k].display();
@@ -128,15 +120,15 @@ function draw(){
 
   stroke("yellow");
   strokeWeight(5)
-  line(0,450,480,450);
+  line(0,500,480,500);
 
   if(particle!=null)
     {
        particle.display();
         
-        if (particle.body.position.y>450)
+        if (particle.body.position.y>500)
         {
-              if (particle.body.position.x < 300) 
+              if (particle.body.position.x < 160) 
               {
                   score=score+500;      
                   particle=null;
@@ -144,14 +136,14 @@ function draw(){
               }
 
 
-              else if (particle.body.position.x < 600 && particle.body.position.x > 301 ) 
+              else if (particle.body.position.x < 320 && particle.body.position.x > 161 ) 
               {
                     score = score + 100;
                     particle=null;
                     if ( count>= 5) gameState ="end";
 
               }
-              else if (particle.body.position.x < 900 && particle.body.position.x > 601 )
+              else if (particle.body.position.x < 480 && particle.body.position.x > 321)
               {
                     score = score + 200;
                     particle=null;
@@ -161,6 +153,18 @@ function draw(){
               
         }
   
+      }
+
+      textSize(30)
+      fill("white");
+      stroke("black")
+      text("score:"+score,30,30);
+
+      if ( gameState =="end") {
+    
+        textSize(90);
+        text("GameOver", 10, 300);
+        
       }
 
 }
